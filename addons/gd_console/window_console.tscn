@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg4ot2hovvoxt"]
+
+[ext_resource type="Theme" uid="uid://dsv7jm6rj3nwt" path="res://addons/gd_console/gd_console_theme.tres" id="1_u8f60"]
+[ext_resource type="Texture2D" uid="uid://dexyogqn14sy4" path="res://addons/gd_console/icons/Terminal.svg" id="2_3to4w"]
+[ext_resource type="Texture2D" uid="uid://od0ggl8nifia" path="res://addons/gd_console/icons/Close.svg" id="2_ftaw2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8f60"]
+bg_color = Color(0, 0.259697, 0.508863, 1)
+
+[node name="window_console" type="Window"]
+position = Vector2i(0, 36)
+size = Vector2i(500, 500)
+borderless = true
+sharp_corners = true
+theme = ExtResource("1_u8f60")
+
+[node name="content" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="header" type="PanelContainer" parent="content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u8f60")
+
+[node name="content" type="HBoxContainer" parent="content/header"]
+layout_mode = 2
+
+[node name="align_left" type="HBoxContainer" parent="content/header/content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="texture_icon" type="TextureRect" parent="content/header/content/align_left"]
+layout_mode = 2
+texture = ExtResource("2_3to4w")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="label_title" type="Label" parent="content/header/content/align_left"]
+layout_mode = 2
+text = "Console"
+
+[node name="align_right" type="HBoxContainer" parent="content/header/content"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="btn_minimize" type="Button" parent="content/header/content/align_right"]
+layout_mode = 2
+
+[node name="btn_maximize" type="Button" parent="content/header/content/align_right"]
+layout_mode = 2
+
+[node name="btn_exit" type="Button" parent="content/header/content/align_right"]
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("2_ftaw2")
+
+[node name="menu" type="PanelContainer" parent="content"]
+layout_mode = 2
+
+[node name="body" type="PanelContainer" parent="content"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CMD" type="VBoxContainer" parent="content/body"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="content/body/CMD"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="stream_out" type="RichTextLabel" parent="content/body/CMD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VScrollBar" type="VScrollBar" parent="content/body/CMD/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="content/body/CMD"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="stream_in" type="LineEdit" parent="content/body/CMD/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="content/body/CMD/HBoxContainer2"]
+layout_mode = 2
+text = "Enter"
