@@ -65,30 +65,30 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CMD" type="VBoxContainer" parent="content/body"]
+[node name="content" type="VBoxContainer" parent="content/body"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="content/body/CMD"]
+[node name="align_top" type="HBoxContainer" parent="content/body/content"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="stream_out" type="RichTextLabel" parent="content/body/CMD/HBoxContainer"]
+[node name="stream_out" type="RichTextLabel" parent="content/body/content/align_top"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VScrollBar" type="VScrollBar" parent="content/body/CMD/HBoxContainer"]
+[node name="stream_scroll" type="VScrollBar" parent="content/body/content/align_top"]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="content/body/CMD"]
+[node name="align_bottom" type="HBoxContainer" parent="content/body/content"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="stream_in" type="LineEdit" parent="content/body/CMD/HBoxContainer2"]
+[node name="stream_in" type="LineEdit" parent="content/body/content/align_bottom"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="content/body/CMD/HBoxContainer2"]
+[node name="btn_submit" type="Button" parent="content/body/content/align_bottom"]
 layout_mode = 2
 text = "Enter"
